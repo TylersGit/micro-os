@@ -1,0 +1,12 @@
+[[bin]]
+name = "micro-os"
+test = false
+
+[package]
+name = "micro-os"
+version = "0.1.0"
+edition = "2024"
+
+[profile.dev]
+panic="abort"
+
