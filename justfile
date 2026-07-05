@@ -9,4 +9,4 @@ build-iso:
     grub-mkrescue -o target/iso/micro-os.iso target/iso/boot/
 
 run:
-    qemu-system-x86_64 -cdrom target/iso/micro-os.iso
+    qemu-system-x86_64 -kernel target/iso/micro-os.iso
