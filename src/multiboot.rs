@@ -25,7 +25,7 @@ const END_TAG: MultibootTag = MultibootTag {
     size: 8
 };
 
-const MULTIBOOT_TAGS: [MultibootTag; 1] = [END_TAG];
+
 
 
 #[unsafe(no_mangle)]
@@ -38,3 +38,7 @@ static MULTIBOOT_HEADER: MultibootHeader = MultibootHeader {
     header_len: MULTIBOOT_HEADER_LEN,
     checksum: MULTIBOOT_CHECKSUM
 };
+#[unsafe(no_mangle)]
+#[unsafe(link_section = ".multiboot")] 
+#[used] // Without this flag, the header is optimized out since it is not used anywhere. 
+static MULTIBOOT_TAGS: [MultibootTag; 1] = [END_TAG];

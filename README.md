@@ -15,3 +15,4 @@ I was not able to get the tooling required for the project to run without switch
 * grub - Specifically for the grub-mkrescue util.
 * xorriso - A dependency of grub-mkrescue. 
 * qemu - For virtualization.
+* grub-pc-bin - grub will not load properly otherwise. 
