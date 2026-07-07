@@ -17,13 +17,15 @@ struct MultibootTag
     flags: u16,
     size: u32
 }
-
+type Tag = (u16,u16,u32);
 // The end tag is defined according to the spec.
 const END_TAG: MultibootTag = MultibootTag {
     tag_type: 0,
     flags: 0,
     size: 8
 };
+
+
 
 
 
@@ -41,4 +43,4 @@ static MULTIBOOT_HEADER: MultibootHeader = MultibootHeader {
 #[unsafe(no_mangle)]
 #[unsafe(link_section = ".multiboot")] 
 #[used] // Without this flag, the header is optimized out since it is not used anywhere. 
-static MULTIBOOT_TAGS: [MultibootTag; 1] = [END_TAG];
+static MULTIBOOT_TAG: Tag = (0, 0, 8);

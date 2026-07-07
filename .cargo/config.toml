@@ -3,5 +3,8 @@ linker = "rust-lld"
 target="x86_64-unknown-none"
 rustflags = [
     "-C", "link-arg=-Tlinker.ld",
-    "-C", "link-arg=-L."
+    "-C", "link-arg=-L.",
+    "-C", "link-arg=-no-pie",
+    "-C", "link-arg=-nostdlib",
+    "-C", "relocation-model=static",
 ]
